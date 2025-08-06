@@ -1,12 +1,16 @@
-# Some beautiful title
+# Framework-Agnostic Design Systems
 
-Slides for what?.
+### Using Lit Web Components in Angular
 
-Originally conceived for the what?.
+Slide for explaining what Lit Web Components are and how to use them in Angular
+
+Originally conceived for [DevFest Modena 2025](https://devfest.modena.it/)
 
 Built on top of [P-Slides](https://github.com/MaxArt2501/p-slides)!
 
 # Url Slide
+
+- [04/10/2025 - DevFest Modena 2025](https://talk-framework-agnostic-copmonent-with-lit.pages.dev/devfest-modena/)
 
 ## Building
 
