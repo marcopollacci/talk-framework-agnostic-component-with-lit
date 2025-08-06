@@ -1,18 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CoverSomething from "../slides/cover-something.astro";
+import CoverDevFestModena from "../slides/cover-devfest-modena.astro";
 import Cover from "../slides/cover.astro";
 import Thanks from "../slides/thanks.astro";
 import favicon from '../img/favicon.svg';
 const favIcon = favicon.src;
-const canRender = import.meta.env.DEV || new Date("2050-12-31") < new Date();
+const canRender = import.meta.env.DEV || new Date("2025-10-04") < new Date(); //! TODO: check date!
 const metaData = {
-  title: 'Something',
+  title: 'Framework-Agnostic Design Systems: Using Lit Web Components in Angular',
   description: 'Talk di Marco Pollacci',
 };
 ---
 <Layout canRender={canRender} favIcon={favIcon} metaData={metaData}>
-  <CoverSomething />
+  <CoverDevFestModena />
   {canRender && (
     <Cover />
     <Thanks />

@@ -53,8 +53,8 @@
   --brand-color-ant: #f60;
   --sketchy-arrow-width: 0.1em;
   --sketchy-arrow-tip-size: 20;
-  --starting-point-gradient: #fafafa;
-  --ending-point-gradient: #000000;
+  --starting-point-gradient: #97a4f1;
+  --ending-point-gradient: #283198;
 }
 
 p-deck::after {
@@ -496,7 +496,7 @@ a {
 }
 
 .text-cover {
-  @include mixins.gradientText(#000, #a0a0a0);
+  @include mixins.gradientText(#283198, #97a4f1);
 }
 
 .text-sub-section {

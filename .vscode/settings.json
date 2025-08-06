@@ -1,3 +1,23 @@
 {
-  "conventionalCommits.scopes": ["project"]
+  "conventionalCommits.scopes": ["devfest-modena", "project"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#333ec0",
+    "activityBar.background": "#333ec0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#320d10",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#333ec0",
+    "statusBar.background": "#283198",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#333ec0",
+    "statusBarItem.remoteBackground": "#283198",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#283198",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#28319899",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#283198"
 }
