@@ -4,6 +4,8 @@ import CoverDevFestModena from "../slides/cover-devfest-modena.astro";
 import Cover from "../slides/cover.astro";
 import Thanks from "../slides/thanks.astro";
 import favicon from '../img/favicon.svg';
+import qrCodeLink from '../img/qrcode_talk_devfest-modena.png'
+import qrCodeRating from '../img/qrcode_rating_devfest-modena.png'
 const favIcon = favicon.src;
 const canRender = import.meta.env.DEV || new Date("2025-10-04") < new Date(); //! TODO: check date!
 const metaData = {
@@ -15,6 +17,6 @@ const metaData = {
   <CoverDevFestModena />
   {canRender && (
     <Cover />
-    <Thanks />
+    <Thanks qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena" />
   )}
 </Layout>
