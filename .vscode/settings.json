@@ -1,5 +1,5 @@
 {
-  "conventionalCommits.scopes": ["devfest-modena", "project"],
+  "conventionalCommits.scopes": ["devfest-modena", "project", "intro"],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#333ec0",
     "activityBar.background": "#333ec0",

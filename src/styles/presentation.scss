@@ -219,8 +219,8 @@ pre {
 }
 
 .current-gradient-sub-section {
-  --starting-point-gradient: #ff00d8;
-  --ending-point-gradient: #ff542f;
+  --starting-point-gradient: #334efe;
+  --ending-point-gradient: #f37559;
   @extend .current-gradient;
 }
 
@@ -596,28 +596,28 @@ pre[data-label-file]::after {
   }
   --color-border: #000000;
   span {
-    &[box] {
+    &[data-box] {
       padding: 0.5em;
       background: transparent;
       outline: none;
       border: 2px solid var(--color-border);
       border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     }
-    &[arrow] {
+    &[data-arrow] {
       font-size: 2.5em;
-      &[left]:before {
+      &[data-left]:before {
         content: "\27F5";
       }
-      &[right]:before {
+      &[data-right]:before {
         content: "\27F6";
       }
-      &[up]:before {
+      &[data-up]:before {
         content: "\2191";
       }
-      &[down]:before {
+      &[data-down]:before {
         content: "\2193";
       }
-      &[up-down]:before {
+      &[data-up-down]:before {
         content: "\21F5";
       }
     }

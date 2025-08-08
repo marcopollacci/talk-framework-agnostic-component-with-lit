@@ -1,5 +1,7 @@
 # Framework-Agnostic Design Systems
 
+[![wakatime](https://wakatime.com/badge/user/2729ac0c-0ebb-4599-b424-3a6648627bff/project/1fdf7e04-32cd-458d-b8e3-00f676bd7f91.svg)](https://wakatime.com/badge/user/2729ac0c-0ebb-4599-b424-3a6648627bff/project/1fdf7e04-32cd-458d-b8e3-00f676bd7f91)
+
 ### Using Lit Web Components in Angular
 
 Slide for explaining what Lit Web Components are and how to use them in Angular
