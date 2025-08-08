@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import angularjs from "../img/loghi/angularjs.svg";
 import backbone from "../img/loghi/backbone.png";
 import ember from "../img/loghi/ember.png";
 import jquery from "../img/loghi/jquery.png";
@@ -8,6 +9,7 @@ import react from "../img/loghi/react.png";
 import solid from "../img/loghi/solid.png";
 import svelte from "../img/loghi/svelte.png";
 import vue from "../img/loghi/vue.webp";
+import angularMascotte from "../img/loghi/angular-mascotte.png";
 ---
 
 <p-slide autoplay timing="1500" timing-fragment="500">
@@ -23,57 +25,63 @@ import vue from "../img/loghi/vue.webp";
   <div>
     <p-fragment
       ><Image
+        src={angularjs}
+        alt="angularjs logo"
+        class="alter-image-size"
+      /></p-fragment
+    >
+    <p-fragment
+      ><Image
         src={backbone}
-        alt="javascript logo"
+        alt="backbone logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
       ><Image
         src={ember}
-        alt="javascript logo"
+        alt="ember logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
       ><Image
         src={jquery}
-        alt="javascript logo"
+        alt="jquery logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
-      ><Image
-        src={qwik}
-        alt="javascript logo"
-        class="alter-image-size"
-      /></p-fragment
+      ><Image src={qwik} alt="qwik logo" class="alter-image-size" /></p-fragment
     >
     <p-fragment
       ><Image
         src={react}
-        alt="javascript logo"
+        alt="react logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
       ><Image
         src={solid}
-        alt="javascript logo"
+        alt="solid logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
       ><Image
         src={svelte}
-        alt="javascript logo"
+        alt="svelte logo"
         class="alter-image-size"
       /></p-fragment
     >
     <p-fragment
+      ><Image src={vue} alt="vue logo" class="alter-image-size" /></p-fragment
+    >
+    <p-fragment
       ><Image
-        src={vue}
-        alt="javascript logo"
+        src={angularMascotte}
+        alt="angular logo"
         class="alter-image-size"
       /></p-fragment
     >
@@ -83,7 +91,7 @@ import vue from "../img/loghi/vue.webp";
 
 <style lang="scss">
   p-slide[autoplay] div {
-    margin-block-start: 4rem;
+    margin-block-start: 1rem;
     display: flex;
     column-gap: 1rem;
 
