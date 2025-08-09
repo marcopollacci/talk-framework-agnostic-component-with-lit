@@ -1,5 +1,10 @@
 {
-  "conventionalCommits.scopes": ["devfest-modena", "project", "intro"],
+  "conventionalCommits.scopes": [
+    "devfest-modena",
+    "project",
+    "intro",
+    "design-system"
+  ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#333ec0",
     "activityBar.background": "#333ec0",
@@ -19,5 +24,11 @@
     "titleBar.inactiveBackground": "#28319899",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#283198"
+  "peacock.color": "#283198",
+  "html.customData": [
+    "./node_modules/p-slides/p-slides.vscode.html-custom-data.json"
+  ],
+  "css.customData": [
+    "./node_modules/p-slides/p-slides.vscode.css-custom-data.json"
+  ]
 }
