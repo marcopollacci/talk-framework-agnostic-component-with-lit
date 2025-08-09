@@ -12,11 +12,11 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "astro": "^5.12.8",
+    "astro": "^5.12.9",
     "p-slides": "^1.4.1"
   },
   "devDependencies": {
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.2.1",
     "husky": "^9.1.7",
     "sass": "^1.90.0",
     "sharp": "^0.34.3",
