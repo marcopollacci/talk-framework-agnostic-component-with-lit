@@ -1,4 +1,54 @@
+---
+import { Image } from "astro:assets";
+import PNotes from "../components/PNotes.astro";
+import dsc from "../img/design-system-circle.png";
+---
+
 <p-slide class="center cover-internal">
-  <h3 style="margin-block-end: 1rem;">What is exactly a Design System?</h3>
+  <h3 style="margin-block-end: 1rem;">What exactly is a Design System?</h3>
   <span style="font-size: 5rem;">🤨</span>
 </p-slide>
+<p-slide autoplay timing-fragment="500">
+  <div data-dsc>
+    <div>
+      <h3>Design system</h3>
+      <ul>
+        <li>📌 Style guides</li>
+        <li>📌 Pattern library</li>
+        <li>📌 Component library</li>
+      </ul>
+    </div>
+    <Image
+      p-fragment
+      src={dsc}
+      alt="design system circle"
+      class="alter-image-size"
+    />
+  </div>
+  <PNotes>
+    Using Atomic Design, we can define patterns and components as follows:
+    <ul style="font-size: 1rem;">
+      <li>
+        Component library (Atoms): A component is a reusable block of code that
+        can stand alone or form part of multiple UI patterns for example, a
+        button.
+      </li>
+      <li>
+        Pattern library (Molecules & Organisms): A pattern is a group of
+        components that designers use to solve usability issues for example, a
+        navbar with a logo, links, search form, and CTA button. A pattern
+        library is a collection of UI patterns within a design system.
+      </li>
+    </ul>
+  </PNotes>
+</p-slide>
+<style lang="scss">
+  [data-dsc] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    img {
+      --image-start-size: 9em;
+    }
+  }
+</style>
