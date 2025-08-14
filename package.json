@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev:devfest-modena": "astro dev --open '/devfest-modena/'",
+    "dev:devfest-modena-2025": "astro dev --open '/devfest-modena-2025/'",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
