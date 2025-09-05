@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Cover from "../slides/cover.astro";
+import Thanks from "../slides/thanks.astro";
+import favicon from '../img/dfm-logo.svg';
+import qrCodeLink from '../img/qrcode_talk_devfest-modena.png'
+import qrCodeRating from '../img/qrcode_rating_devfest-modena.png'
+import Intro from '../slides/intro.astro';
+import DesignSystem from '../slides/design-system.astro';
+import CoverFourDev from '../slides/cover-four-dev.astro';
+const favIcon = favicon.src;
+const canRender = import.meta.env.DEV || new Date("2025-10-03") < new Date();
+const metaData = {
+  title: 'Framework-Agnostic Design Systems: Using Lit Web Components in Angular',
+  description: 'Talk di Marco Pollacci',
+};
+---
+<Layout canRender={canRender} favIcon={favIcon} metaData={metaData}>
+  <CoverFourDev />
+  {canRender && (
+    <Cover />
+    <Intro />
+    <DesignSystem />
+    <Thanks qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025" />
+  )}
+</Layout>

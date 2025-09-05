@@ -3,7 +3,8 @@
     "devfest-modena",
     "project",
     "intro",
-    "design-system"
+    "design-system",
+    "4dev"
   ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#333ec0",

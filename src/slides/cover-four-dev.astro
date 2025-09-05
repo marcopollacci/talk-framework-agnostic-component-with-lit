@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import fourDevLogo from "../img/4dev-logo.png";
+---
+
+<p-slide class="cover">
+  <h1>Framework-Agnostic Design Systems</h1>
+  <p-note class="center">
+    <h6 style="margin-block-end: 2rem;">Using Lit Web Components</h6>
+    <Image src={fourDevLogo} alt="4dev logo" class="alter-image-size" />
+  </p-note>
+  <p-note class="center bottom-fist-page text-sub-section">
+    <span>Marco Pollacci</span>
+    <span>03/10/2025 - Microsoft - Roma</span>
+  </p-note>
+</p-slide>
+<style lang="scss">
+  p-slide {
+    img {
+      --image-start-size: 4.5em;
+      height: var(--image-start-size);
+    }
+  }
+</style>

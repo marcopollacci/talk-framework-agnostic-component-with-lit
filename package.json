@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev:devfest-modena-2025": "astro dev --open '/devfest-modena-2025/'",
+    "dev:4dev-2025": "astro dev --open '/4dev-2025/'",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
