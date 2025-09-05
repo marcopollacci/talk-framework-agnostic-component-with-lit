@@ -1,10 +1,10 @@
 {
   "conventionalCommits.scopes": [
+    "4dev",
     "devfest-modena",
     "project",
     "intro",
-    "design-system",
-    "4dev"
+    "design-system"
   ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#333ec0",
