@@ -1,3 +1,207 @@
+---
+import { Image } from "astro:assets";
+import rolleyeMeme from "../img/rolleye-meme.gif";
+import boomMeme from "../img/boom-meme.gif";
+import PNotes from "../components/PNotes.astro";
+---
+
 <p-slide class="center">
   <h3>🥳 <span class="text-cover">Lit</span> 🥳</h3>
 </p-slide>
+<p-slide autoplay class="center">
+  <h2 style="margin-block-end: 0.3em;" class="text-cover">BUT FIRST!</h2>
+  <Image
+    p-fragment
+    src={rolleyeMeme}
+    alt="rolleye meme"
+    class="alter-image-size"
+    style="--image-start-size: 6em"
+  />
+</p-slide>
+<p-slide class="cover-internal">
+  <h2>Web Components</h2>
+</p-slide>
+<p-slide autoplay timing-fragment="1000">
+  <h4 style="margin-block-end: 0.3em;">
+    <span class="text-cover">A (not so) new standard</span> 📋
+  </h4>
+  <ul class="mid-dimension" style="margin-block-start: 0.6em;">
+    <li p-fragment>📌 Introduced by W3C around <strong>2013-2014</strong></li>
+    <li p-fragment>📌 Browser support matured by <strong>2018+</strong></li>
+    <li p-fragment>📌 Today: fully supported in all modern browsers ✅</li>
+    <li p-fragment>📌 Reusable across any framework (or without one)</li>
+  </ul>
+  <p
+    p-fragment
+    no-autoplay
+    style="margin-block-start: 1rem; text-align: center;"
+  >
+    <span class="text-cover">They're here to stay.</span> 🤘
+  </p>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">The building blocks of Web Components</span> 🏗️
+  </h4>
+  <ul class="mid-dimension">
+    <li p-fragment>
+      📌 <strong>Custom Elements</strong> → define new HTML tags <code
+        p-fragment
+        is:raw>&lt;four-dev></code
+      >
+    </li>
+    <li p-fragment>
+      📌 <strong>Shadow DOM</strong> → encapsulation of styles & markup
+    </li>
+    <li p-fragment>
+      📌 <strong>HTML Templates</strong> → structure reusable chunks of DOM
+    </li>
+  </ul>
+  <PNotes>
+    <p>
+      <b>custom elements</b>: Let us define new tags like <code
+        >&lt;my-button&gt;</code
+      > that behave just like native HTML.
+    </p>
+    <p>
+      <b>shadow dom</b>: Provides style and markup encapsulation — so no more
+      CSS leaks or conflicts.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide class="center">
+  <h2 style="margin-block-end: 0.3em;" class="text-cover">
+    You already use them!
+  </h2>
+  <Image
+    src={boomMeme}
+    alt="boom meme"
+    class="alter-image-size"
+    style="--image-start-size: 4em"
+  />
+  <h5
+    p-fragment
+    class="text-cover"
+    style="font-style: italic; text-align: center; margin-block: 0.3em;"
+  >
+    Even if you don't know it!
+  </h5>
+  <h5
+    p-fragment
+    class="text-cover"
+    style="font-style: italic; text-align: end;"
+  >
+    (or at least one of your 3rd party library does)...
+  </h5>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Native browser elements</span>
+    <code>&lt;video&gt;</code>
+  </h4>
+  <div data-video-code>
+    <video controls>
+      <source
+        src="https://developer.mozilla.org/shared-assets/videos/flower.webm"
+        type="video/webm"
+      />
+    </video>
+    <pre
+      class="small-line"
+      data-label-file="video.html">
+ <code is:raw style="font-size: .8em" class="language-html"> 
+    &lt;video controls>
+      &lt;source
+        src="....."
+        type="video/webm"
+      />
+    &lt;/video>
+</code>
+</pre>
+  </div>
+</p-slide>
+<p-slide data-details>
+  <h4>
+    <span class="text-cover">Native browser elements</span>
+    <code>&lt;details&gt;</code>
+  </h4>
+  <div data-details-code>
+    <details>
+      <summary>Native browser elements</summary>
+      <p>Hello from details</p>
+    </details>
+
+    <pre
+      class="small-line"
+      data-label-file="video.html">
+ <code is:raw style="font-size: .8em" class="language-html"> 
+  &lt;details open>
+    &lt;summary>Native browser elements&lt;/summary>
+    &lt;p>Hello from details&lt;/p>
+  &lt;/details>
+</code>
+</pre>
+  </div>
+</p-slide>
+<p-slide autoplay timing-fragment="1000">
+  <h4><span class="text-cover">And much more!</span> ᕙ( •̀ ᗜ •́ )ᕗ</h4>
+  <ul class="small-text">
+    <li p-fragment>
+      📌 <code>&lt;audio&gt;</code> — similar to video but for audio (with built-in
+      controls)
+    </li>
+    <li p-fragment>
+      📌 <code>&lt;dialog&gt;</code> — native modal / dialog element with built-in
+      APIs
+    </li>
+    <li p-fragment>
+      📌 <code>&lt;canvas&gt;</code> — drawing surface with isolated rendering context
+    </li>
+    <li p-fragment>
+      📌 <code>&lt;meter&gt;</code>, <code>&lt;progress&gt;</code> — built-in semantics
+      for progress / measurement
+    </li>
+  </ul>
+  <p p-fragment style="text-align: end;">Ecc..</p>
+</p-slide>
+<style lang="scss">
+  ul.small-text li {
+    margin-block-end: 0.6em;
+  }
+  div[data-video-code],
+  div[data-details-code] {
+    video {
+      width: 10em;
+    }
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+</style>
+<script>
+  const stateElement = document.querySelector("p-slide[data-details]")!;
+  let interval: null | NodeJS.Timeout = null;
+  const observer = new MutationObserver((mutations) => {
+    const [element] = mutations;
+
+    const el = element.target as Element;
+    const isVisibile = el.getAttribute("aria-hidden") === "false";
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+    if (isVisibile && !interval) {
+      interval = setInterval(() => {
+        const details = document.querySelector("details");
+        if (details) {
+          details.open = !details.open;
+        }
+      }, 1500);
+    }
+  });
+
+  observer.observe(stateElement, {
+    attributes: true,
+    attributeFilter: ["aria-hidden"],
+  });
+</script>
