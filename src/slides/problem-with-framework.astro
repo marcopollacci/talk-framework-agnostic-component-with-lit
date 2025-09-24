@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import problemMeme from "../img/problem_meme.gif";
+import PNotes from "../components/PNotes.astro";
+import consequence from "../img/there-will-be.jpg";
+---
+
+<p-slide class="center cover-internal">
+  <h3>The Problem</h3>
+  <Image
+    p-fragment
+    src={problemMeme}
+    alt="problem meme"
+    class="alter-image-size"
+  />
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover"
+      >Main problems with framework-specific components</span
+    > 🚨
+  </h4>
+  <ul class="mid-dimension">
+    <li p-fragment>
+      📌 Vendor lock-in: components only work within that framework 🔗
+    </li>
+    <li p-fragment>
+      📌 Costly rewrites if the framework changes or fades away ⚠️
+    </li>
+    <li p-fragment>📌 Risk of framework deprecation or discontinuation 🧩</li>
+    <li p-fragment>
+      📌 Reduced longevity: design system tied to framework lifecycle 🚫
+    </li>
+    <li p-fragment>
+      📌 Slower adoption of new standards & browser features ⏳
+    </li>
+  </ul>
+  <PNotes>
+    <p><b>VendorLockIn: often only with same framework version</b></p>
+  </PNotes>
+</p-slide>
+<p-slide autoplay class="center">
+  <h3><span class="text-cover">Consequences of framework lock-in</span></h3>
+  <Image
+    p-fragment
+    style="--image-start-size: 6em"
+    src={consequence}
+    alt="consequence meme"
+    class="alter-image-size"
+  />
+</p-slide>
+<p-slide>
+  <ul class="mid-dimension">
+    <li>📌 Slow updates and feature adoption 🐢</li>
+    <li p-fragment>📌 Growing technical debt over time 📉</li>
+    <li p-fragment>📌 Higher long-term maintenance costs 💸</li>
+    <li p-fragment>📌 Blocked innovation across teams 🚧</li>
+    <li p-fragment>📌 Painful framework migrations 🤯</li>
+    <li p-fragment>📌 Business risk: DS lifespan = framework lifespan ⚖️</li>
+  </ul>
+  <PNotes>
+    <p>
+      <b>maintenance</b>: Developers spend more time fixing issues and adapting
+      to breaking changes, instead of building new features. This isn't just
+      technical cost — it's also business cost. Slower delivery, higher budget
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide autoplay>
+  <h3>
+    <span class="current-gradient-sub-section"
+      >Alright, thanks for the chaos!</span
+    > 😅
+  </h3>
+  <h5 p-fragment style="text-align: end;">
+    <span class="current-gradient-sub-section">…so, what's our next move?</span>
+    🤔
+  </h5>
+</p-slide>
+<style lang="scss">
+  h4 {
+    margin-block-end: 0.8em;
+  }
+  .cover-internal {
+    img {
+      --image-start-size: 6em;
+      filter: none;
+      opacity: 1;
+      transform: none;
+      height: var(--image-start-size);
+    }
+  }
+</style>
