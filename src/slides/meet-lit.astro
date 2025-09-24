@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import PNotes from "../components/PNotes.astro";
+import badgeDom from "../img/badge-dom.png";
 ---
 
 <p-slide class="center">
@@ -31,7 +33,7 @@ import PNotes from "../components/PNotes.astro";
     class="circle-sketch-highlight"></span>
   <PNotes>
     <p>
-      The key message here is that Lit doesn’t try to replace the web, it
+      The key message here is that Lit doesn't try to replace the web, it
       enhances it. It gives superpowers to Web Components while staying minimal.
       That means no lock-in and no unnecessary complexity.
     </p>
@@ -40,5 +42,83 @@ import PNotes from "../components/PNotes.astro";
 <style lang="scss">
   h4 {
     margin-block-end: 0.5em;
+  }
+</style>
+<p-slide class="center">
+  <h3 class="text-cover">Our first Lit Web Component</h3>
+  <p>(•̀ᴗ•́ )و</p>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .8em" class="language-js small-line"> 
+  import { html, LitElement } from "lit";
+  import { customElement } from "lit/decorators.js";
+
+  @customElement("my-badge")
+  export class MyBadge extends LitElement {
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }
+</code>
+</pre>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  @customElement("my-badge")
+  export class MyBadge extends LitElement {
+    static styles = css`
+      :host {
+        display: inline-block; padding: 0.25em 0.4em;
+        font-weight: 700; text-align: center;
+        border-radius: 0.25rem; color: #fff;
+        background-color: #0d6efd;
+      }
+    `;
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }</code>
+</pre>
+</p-slide>
+<p-slide>
+  <h5 class="center">Let&#39;s Code 👨‍💻</h5>
+  <div data-wc-live>
+    <div>
+      <code is:raw style="font-size: .6em" class="language-html small-line">
+        &lt;my-badge>Badge&lt;/my-badge>
+      </code>
+
+      <my-badge p-fragment>Badge</my-badge>
+    </div>
+    <Image
+      p-fragment
+      style="--image-start-size: 4em"
+      src={badgeDom}
+      alt="badge dom"
+      class="alter-image-size"
+    />
+  </div>
+</p-slide>
+<script src="../js/my-badge.js"></script>
+<style lang="scss">
+  div[data-wc-live] {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1em;
+    }
   }
 </style>
