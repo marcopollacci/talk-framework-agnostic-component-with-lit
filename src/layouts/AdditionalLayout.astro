@@ -1,0 +1,19 @@
+---
+import Layout4Dev from "./Layout4Dev.astro";
+
+const { wrapper } = Astro.props;
+let caseWrapper = "";
+if (wrapper) {
+  caseWrapper = wrapper;
+}
+---
+
+{!caseWrapper && <slot />}
+
+{
+  caseWrapper === "4dev" && (
+    <Layout4Dev>
+      <slot />
+    </Layout4Dev>
+  )
+}
