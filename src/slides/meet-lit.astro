@@ -14,9 +14,16 @@ import badgeDom from "../img/badge-dom.png";
 <p-slide>
   <h4><span class="text-cover">Lit</span> ✨</h4>
   <ul class="mid-dimension">
-    <li>📌 A lightweight library built on top of Web Components</li>
+    <li>
+      📌 A lightweight library <span class="cover-internal-sub-section-all"
+        >(~5 KB gzipped)</span
+      >
+    </li>
     <li>📌 Makes writing components simpler and faster</li>
-    <li>📌 Fully standard-based — no framework lock-in</li>
+    <li>
+      📌 <span class="cover-internal-sub-section-all">Fully standard-based</span
+      >: no framework lock-in
+    </li>
   </ul>
 </p-slide>
 <p-slide>
@@ -24,8 +31,10 @@ import badgeDom from "../img/badge-dom.png";
     <span class="text-cover">"Do more with less"</span> ⚡
   </h4>
   <p class="mid-dimension">
-    Lit embraces a minimalist philosophy: it builds on the web platform, adds
-    only what's necessary, and stays out of your way for everything else.
+    Lit embraces a <span class="cover-internal-sub-section-all"
+      >minimalist philosophy</span
+    >: it builds on the web platform, adds only what's necessary, and stays out
+    of your way for everything else.
   </p>
   <span
     p-fragment
@@ -89,13 +98,11 @@ import badgeDom from "../img/badge-dom.png";
 </pre>
 </p-slide>
 <p-slide>
-  <h5 class="center">Let&#39;s Code 👨‍💻</h5>
   <div data-wc-live>
     <div>
       <code is:raw style="font-size: .6em" class="language-html small-line">
         &lt;my-badge>Badge&lt;/my-badge>
       </code>
-
       <my-badge p-fragment>Badge</my-badge>
     </div>
     <Image
@@ -108,7 +115,7 @@ import badgeDom from "../img/badge-dom.png";
   </div>
 </p-slide>
 <script src="../js/my-badge.js"></script>
-<style lang="scss">
+<style lang="scss" is:global>
   div[data-wc-live] {
     display: grid;
     align-items: center;

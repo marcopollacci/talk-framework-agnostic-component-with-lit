@@ -12,6 +12,7 @@ import ProblemWithFramework from '../slides/problem-with-framework.astro';
 import Webcomponent from '../slides/webcomponent.astro';
 import ThanksWiithLayout from '../slides/thanks-wiith-layout.astro';
 import MeetLit from '../slides/meet-lit.astro';
+import DeepDiveLit from '../slides/deep-dive-lit.astro';
 const favIcon = favicon.src;
 const canRender = import.meta.env.DEV || new Date("2025-10-03") < new Date();
 const metaData = {
@@ -29,6 +30,7 @@ const metaData = {
     <ProblemWithFramework />
     <Webcomponent />
     <MeetLit />
+    <DeepDiveLit />
     <ThanksWiithLayout qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025" />
   )}
 </Layout>
