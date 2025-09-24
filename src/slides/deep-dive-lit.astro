@@ -4,6 +4,7 @@ import deeperMeme from "../img/deeper-meme.jpeg";
 import lifecycle from "../img/lifecycle.png";
 import PNotes from "../components/PNotes.astro";
 import badgeDomSec from "../img/badge-dom-sec.png";
+import badgeDomTree from "../img/badge-dom-tre.png";
 ---
 
 <p-slide class="center">
@@ -103,6 +104,72 @@ import badgeDomSec from "../img/badge-dom-sec.png";
       p-fragment
       style="--image-start-size: 4em"
       src={badgeDomSec}
+      alt="badge dom"
+      class="alter-image-size"
+    />
+  </div>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Scoped Styles / Shadow DOM</span> 🥷🏿
+  </h4>
+</p-slide>
+<p-slide>
+  <ul class="mid-dimension">
+    <li>
+      📌 <b>Shadow DOM</b>: provides style and markup encapsulation. No more CSS
+      leaks or conflicts.
+    </li>
+    <li p-fragment>
+      📌 <b>Scoped Styles</b>: styles defined inside the component stay inside
+      and external CSS can't leak in and unexpectedly change how your component
+      looks
+    </li>
+  </ul>
+  <PNotes>
+    <p>
+      <b>@state</b>: perfect for internal state management, like UI toggles,
+      counters, or temporary values. It should not be accessible from outside,
+      keeping encapsulation intact.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  export class MyBadge extends LitElement {
+    @property({ type: String }) appearance = "";
+    static styles = css`
+        //other styles with default values and background...
+        slot {
+            color: #fff;
+        }
+    `;
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }</code>
+</pre>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 2.3em;position: absolute;inset-block-end: 6.8em;width: 7em;inset-inline-start: 0.9em;z-index: 1000"
+    class="circle-sketch-highlight"></span>
+</p-slide>
+<p-slide>
+  <div data-wc-live>
+    <div>
+      <code is:raw style="font-size: .38em" class="language-html small-line">
+        &lt;my-badge style="color: #000">Badge&lt;/my-badge>
+      </code>
+      <my-badge style="color: #000" p-fragment>Badge</my-badge>
+    </div>
+    <Image
+      p-fragment
+      style="--image-start-size: 4em"
+      src={badgeDomTree}
       alt="badge dom"
       class="alter-image-size"
     />

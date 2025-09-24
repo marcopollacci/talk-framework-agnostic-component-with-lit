@@ -978,6 +978,9 @@ var $ = class extends Z {
       color: #fff;
       background-color: #0d6efd;
     }
+    slot {
+      color: #fff;
+    }
     :host([appearance="secondary"]) {
       background-color: #6c757d;
     }
