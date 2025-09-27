@@ -24,26 +24,29 @@ import tfnMeme from "../img/tfn.gif";
   </p>
 </p-slide>
 <p-slide class="center"> So, when we introduce a Lit Web Component... </p-slide>
-<p-slide class="center">
-  <p>
-    ...Angular thinks it's just <i>an unknown HTML tag</i>
+<p-slide class="center" autoplay timing-fragment="800">
+  <p style="margin-block-end: 1em">
+    ...Angular thinks it's just <i class="cover-internal-sub-section-all"
+      >an unknown HTML tag</i
+    >
   </p>
+  <span p-fragment>(ᵕ—ᴗ—)</span>
 </p-slide>
 <p-slide>
   <Image src={tfnMeme} alt="thanks for nothing meme" class="alter-image-size" />
 </p-slide>
 <p-slide class="center">
-  <h3>
+  <h4>
     <span class="text-cover">How to make Angular accept Lit components?</span> 🤨
-  </h3>
+  </h4>
 </p-slide>
-<p-slide class="center mid-dimension">
+<p-slide class="center mid-dimension" autoplay timing-fragment="800">
   <p style="line-height: 1.6;">
-    We need to teach Angular that <b>custom elements are valid</b>.<br />
-    Angular provides a special schema: <code>CUSTOM_ELEMENTS_SCHEMA</code>.<br
-    />
+    We need to teach Angular that <b>custom elements are valid</b>
+    Angular provides a special schema: <code is:raw>CUSTOM_ELEMENTS_SCHEMA</code
+    >
   </p>
-  <p style="margin-top: 1em; text-align: center;">
+  <p p-fragment style="margin-top: 1em; text-align: center;">
     With this schema, Angular stops complaining 👌
   </p>
 </p-slide>
