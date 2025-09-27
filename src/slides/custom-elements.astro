@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+import almostMeme from "../img/almost-meme.jpg";
+import PNotes from "../components/PNotes.astro";
+import destroyallMeme from "../img/destroyall-meme.jpg";
+---
+
+<p-slide class="center">
+  <h3>
+    <span class="cover-internal-sub-section-all">So... integration done?</span> 😎
+  </h3>
+</p-slide>
+<p-slide>
+  <Image src={almostMeme} alt="almost meme" class="alter-image-size" />
+</p-slide>
+<p-slide class="center cover-internal-sub-section-all">
+  <h2>
+    There's still <b>one more thing</b>!
+  </h2>
+</p-slide>
+<p-slide class="center">
+  <h2>
+    <code>custom-elements.json</code>
+  </h2>
+  <PNotes>
+    <p>
+      "To really make your design system usable, discoverable, and
+      developer-friendly across teams, we need to describe it in a standard way.
+      And thats where <code>custom-elements.json</code> comes in."
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide autoplay timing-fragment="1000">
+  <h3 class="text-cover">What is custom-elements.json?</h3>
+  <p p-fragment class="mid-dimension">
+    It's a <b>metadata file</b> that describes your Web Components.
+  </p>
+  <p p-fragment class="mid-dimension">
+    A standard way to document Web Components 📖
+  </p>
+</p-slide>
+<p-slide>
+  <p style="margin-block-end: 1em;">It includes details like:</p>
+  <ul class="mid-dimension">
+    <li p-fragment>📌 Component names & tags</li>
+    <li p-fragment>📌 Properties, attributes, and types</li>
+    <li p-fragment>📌 Events, slots, CSS parts</li>
+  </ul>
+</p-slide>
+<p-slide class="center">
+  <h4>
+    <span class="text-cover">How do we create custom-elements.json?</span>
+  </h4>
+</p-slide>
+<p-slide class="center" autoplay>
+  <h5 style="margin-block-end: 1em;" class="cover-internal-sub-section-all">
+    Lit provides a library that scans your components and produces the JSON
+  </h5>
+  <span p-fragment>✧｡٩(ˊᗜˋ )و✧*｡</span>
+</p-slide>
+<p-slide>
+  <pre
+    class="small-line small-text"
+    data-label-file="bash.sh"><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //install library
+    npm install --save-dev @custom-elements-manifest/analyzer</code>
+    <p-fragment><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //add script to angular.json
+    "analyze": "cem analyze --litelement",</code></p-fragment>
+    <p-fragment><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //then, run the script
+    npm run analyze
+    </code></p-fragment>
+</pre></p-slide
+>
+<p-slide class="center">
+  <h3>🎉 Done! 🎉</h3>
+  <p>
+    I've got <span class="cover-internal-sub-section-all"
+      >custom-elements.json</span
+    > now!" 🎉
+  </p>
+</p-slide>
+<p-slide>
+  <h4 style="margin-top:1em; text-align:center;">...but wait 👀</h4>
+</p-slide>
+<p-slide autoplay timing-fragment="1500">
+  <span
+    ><span class="cover-internal-sub-section-all"
+      >VS Code doesn't magically read it by default</span
+    > 🙃</span
+  >
+  <Image
+    p-fragment
+    src={destroyallMeme}
+    alt="destroy all meme"
+    class="alter-image-size"
+    style="--image-start-size: 5em; margin-block-start: 1em;"
+  />
+</p-slide>

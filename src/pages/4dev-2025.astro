@@ -15,6 +15,7 @@ import MeetLit from '../slides/meet-lit.astro';
 import DeepDiveLit from '../slides/deep-dive-lit.astro';
 import IntegrationVanilla from '../slides/integration-vanilla.astro';
 import IntegrationAngular from '../slides/integration-angular.astro';
+import CustomElements from '../slides/custom-elements.astro';
 const favIcon = favicon.src;
 const canRender = import.meta.env.DEV || new Date("2025-10-03") < new Date();
 const metaData = {
@@ -35,6 +36,7 @@ const metaData = {
     <DeepDiveLit />
     <IntegrationVanilla />
     <IntegrationAngular />
+    <CustomElements />
     <ThanksWiithLayout qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/4dev-2025" />
   )}
 </Layout>
