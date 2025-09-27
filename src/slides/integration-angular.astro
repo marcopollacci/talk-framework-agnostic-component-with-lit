@@ -43,10 +43,73 @@ import tfnMeme from "../img/tfn.gif";
 <p-slide class="center mid-dimension" autoplay timing-fragment="800">
   <p style="line-height: 1.6;">
     We need to teach Angular that <b>custom elements are valid</b>
-    Angular provides a special schema: <code is:raw>CUSTOM_ELEMENTS_SCHEMA</code
-    >
+    Angular provides a special schema:
+    <code is:raw>CUSTOM_ELEMENTS_SCHEMA</code>
   </p>
-  <p p-fragment style="margin-top: 1em; text-align: center;">
+  <p p-fragment style="margin-top: 1em;
+      text-align: center;">
     With this schema, Angular stops complaining 👌
   </p>
+</p-slide>
+<p-slide>
+  <h4 style="margin-block-end: 0.7em" class="center">Let&#39;s Code 👨‍💻</h4>
+  <pre
+    class="small-line small-text"
+    data-label-file="app.component.ts"><code is:raw style="font-size: .6em" class="language-js small-line">
+        import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+        @Component({
+        selector: 'app-root',
+        template: `&lt;my-badge appearance="secondary">Badge&lt;/my-badge>`,
+        schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        })
+        export class AppComponent {}
+  </code></pre>
+</p-slide>
+<p-slide class="text-cover"> And now...how to import the Library? </p-slide>
+<p-slide class="center">
+  <h3><span class="cover-internal-sub-section-all">From CDN</span> 🌏</h3>
+</p-slide>
+<p-slide autoplay>
+  <h6 style="margin-block-end: 0.1em" class="center">Let&#39;s Code 👨‍💻</h6>
+  <pre
+    class="small-line small-text"
+    data-label-file="index.html"><code is:raw style="font-size: .6em" class="language-html small-line">
+    &lt;html lang="en">
+    &lt;head>
+        &lt;meta charset="utf-8" />
+        &lt;title>My Angular App&lt;/title>
+        &lt;base href="/" />
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" />
+        &lt;link rel="icon" type="image/x-icon" href="favicon.ico" />
+        &lt;script src="https://cdn.example.com/my-lit-library.js"&gt;&lt;/script&gt;
+    &lt;/head>
+    &lt;body>
+        &lt;app-root>&lt;/app-root>
+    &lt;/body>
+    &lt;/html>
+  </code></pre>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 1.5em;position: absolute;inset-block-end: 6.1em;width: 12em;inset-inline-start: 1.9em;z-index: 1000"
+    class="circle-sketch-highlight"></span>
+</p-slide>
+<p-slide class="center">
+  <h3><span class="cover-internal-sub-section-all">From NPM</span> 📦</h3>
+</p-slide>
+<p-slide autoplay>
+  <h4 style="margin-block-end: 0.7em" class="center">Let&#39;s Code 👨‍💻</h4>
+  <pre
+    class="small-line small-text"
+    data-label-file="main.ts"><code is:raw style="font-size: .6em" class="language-js small-line">
+    import 'my-lit-library.js';
+    import { bootstrapApplication } from '@angular/platform-browser';
+    import { appConfig } from './app/app.config';
+    import { App } from './app/app';
+
+    bootstrapApplication(App, appConfig).catch((err) => console.error(err));
+  </code></pre>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 1em;position: absolute;inset-block-end: 7.35em;width: 7em;inset-inline-start: 1.9em;z-index: 1000"
+    class="circle-sketch-highlight"></span>
 </p-slide>
