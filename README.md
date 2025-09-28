@@ -12,6 +12,7 @@ Built on top of [P-Slides](https://github.com/MaxArt2501/p-slides)!
 
 # Url Slide
 
+- [03/10/2025 - Sharp4Dev 2025](https://talk-framework-agnostic-component-with-lit.pages.dev/4dev-2025/)
 - [04/10/2025 - DevFest Modena 2025](https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025/)
 
 ## Building
