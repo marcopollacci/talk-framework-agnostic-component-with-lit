@@ -127,10 +127,31 @@ import badgeDomTree from "../img/badge-dom-tre.png";
     </li>
   </ul>
   <PNotes>
-    <p>
-      <b>@state</b>: perfect for internal state management, like UI toggles,
-      counters, or temporary values. It should not be accessible from outside,
-      keeping encapsulation intact.
+    <p style="font-size: 0.75em;">
+      <b>Shadow DOM</b>: browser feature allowing components to encapsulate
+      their structure and styles. This prevents external CSS from breaking the
+      component and makes it portable across different apps.
+    </p>
+    <p style="font-size: 0.75em;">
+      <b>Shadow DOM basics</b>: It creates a hidden DOM subtree inside your
+      element. This makes components self-contained and prevents conflicts with
+      the rest of the app.
+    </p>
+    <p style="font-size: 0.75em;">
+      <b>Encapsulation</b>: Styles are scoped to the shadow tree. A global CSS
+      rule like <code is:raw>p { color: blue }</code> will not affect the paragraph
+      inside this component.
+    </p>
+    <p style="font-size: 0.75em;">
+      <b>Open vs closed mode</b>: With <code>open</code>, you can access
+      <code>shadowRoot</code> from JavaScript. With <code>closed</code>, it's
+      hidden, useful for stricter encapsulation.
+    </p>
+    <p style="font-size: 0.75em;">
+      <b>Scoped Styles</b>: Emphasize that styles written inside the component
+      are automatically scoped, so you don't have to worry about class naming
+      conventions like BEM or about unexpected overrides from a global
+      stylesheet.
     </p>
   </PNotes>
 </p-slide>
