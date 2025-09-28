@@ -1,0 +1,55 @@
+---
+import Image from "astro/components/Image.astro";
+import logo4Dev from "../img/4dev/logo-header.png";
+import coding from "../img/4dev/coding.png";
+---
+
+<div role="heading">
+  <Image src={logo4Dev} alt="4dev logo" class="alter-image-size" />
+</div>
+<slot />
+<div data-footer>
+  <Image src={coding} alt="4dev logo" class="alter-image-size" />
+</div>
+
+<style lang="scss">
+  div[role="heading"] {
+    position: absolute;
+    z-index: 1000;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    width: 100%;
+    border-block-end: 0.7rem solid #2f5596;
+    background-color: #fff;
+    padding-block-start: 0.2em;
+    padding-inline-start: 0.2em;
+    img {
+      --image-start-size: 1em;
+    }
+  }
+  div[data-footer] {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    width: 100%;
+    background-color: #2f5596;
+    border-block-start: 0.3rem solid #fff;
+    img {
+      padding: 0.5rem;
+      margin-inline-end: 0.2em;
+      --image-start-size: 1.3em;
+    }
+  }
+</style>
+<style is:global lang="scss">
+  p-deck[mode="speaker"],
+  p-deck[mode="grid"] {
+    div[role="heading"],
+    div[data-footer] {
+      display: none;
+    }
+  }
+</style>

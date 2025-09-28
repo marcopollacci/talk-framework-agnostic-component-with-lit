@@ -7,7 +7,8 @@ import SpeakerMode from "../components/SpeakerMode.astro";
 import { Image } from "astro:assets";
 import { Font } from "astro:assets";
 import comingSoon from "../img/coming-soon.png";
-const { canRender, favIcon, metaData } = Astro.props;
+import AdditionalLayout from "./AdditionalLayout.astro";
+const { canRender, favIcon, metaData, wrapper } = Astro.props;
 const bodyAttributes = canRender ? undefined : "coming-soon";
 ---
 
@@ -29,6 +30,7 @@ const bodyAttributes = canRender ? undefined : "coming-soon";
   </head>
   <body coming-soon={bodyAttributes}>
     <p-deck>
+      <AdditionalLayout wrapper={wrapper} />
       <slot />
     </p-deck>
     {

@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import PNotes from "../components/PNotes.astro";
+import badgeDom from "../img/badge-dom.png";
+---
+
+<p-slide class="center">
+  <h3><span class="text-cover">Finally, Lit</span> 🥳</h3>
+  <p class="mid-dimension">
+    A modern library for building fast, lightweight, and reusable Web
+    Components.
+  </p>
+</p-slide>
+<p-slide>
+  <h4><span class="text-cover">Lit</span> ✨</h4>
+  <ul class="mid-dimension">
+    <li>
+      📌 A lightweight library <span class="cover-internal-sub-section-all"
+        >(~5 KB gzipped)</span
+      >
+    </li>
+    <li>📌 Makes writing components simpler and faster</li>
+    <li>
+      📌 <span class="cover-internal-sub-section-all">Fully standard-based</span
+      >: no framework lock-in
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">"Do more with less"</span> ⚡
+  </h4>
+  <p class="mid-dimension">
+    Lit embraces a <span class="cover-internal-sub-section-all"
+      >minimalist philosophy</span
+    >: it builds on the web platform, adds only what's necessary, and stays out
+    of your way for everything else.
+  </p>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 1.6em;position: absolute;inset-block-end: 6.9em;width: 11em;inset-inline-start: 0.9em;"
+    class="circle-sketch-highlight"></span>
+  <PNotes>
+    <p>
+      The key message here is that Lit doesn't try to replace the web, it
+      enhances it. It gives superpowers to Web Components while staying minimal.
+      That means no lock-in and no unnecessary complexity.
+    </p>
+  </PNotes>
+</p-slide>
+<style lang="scss">
+  h4 {
+    margin-block-end: 0.5em;
+  }
+</style>
+<p-slide class="center">
+  <h3 class="text-cover">Our first Lit Web Component</h3>
+  <p>(•̀ᴗ•́ )و</p>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .8em" class="language-js small-line"> 
+  import { html, LitElement } from "lit";
+  import { customElement } from "lit/decorators.js";
+
+  @customElement("my-badge")
+  export class MyBadge extends LitElement {
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }
+</code>
+</pre>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  @customElement("my-badge")
+  export class MyBadge extends LitElement {
+    static styles = css`
+      :host {
+        display: inline-block; padding: 0.25em 0.4em;
+        font-weight: 700; text-align: center;
+        border-radius: 0.25rem; color: #fff;
+        background-color: #0d6efd;
+      }
+    `;
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }</code>
+</pre>
+</p-slide>
+<p-slide>
+  <div data-wc-live>
+    <div>
+      <code is:raw style="font-size: .6em" class="language-html small-line">
+        &lt;my-badge>Badge&lt;/my-badge>
+      </code>
+      <my-badge p-fragment>Badge</my-badge>
+    </div>
+    <Image
+      p-fragment
+      style="--image-start-size: 4em"
+      src={badgeDom}
+      alt="badge dom"
+      class="alter-image-size"
+    />
+  </div>
+</p-slide>
+<script src="../js/my-badge.js"></script>
+<style lang="scss" is:global>
+  div[data-wc-live] {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1em;
+    }
+  }
+</style>

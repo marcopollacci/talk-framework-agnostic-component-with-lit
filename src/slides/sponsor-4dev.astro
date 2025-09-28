@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import sponsor1 from "../img/4dev/f075e4ae-d28e-45da-95ba-ab8977005903.jpeg";
+import sponsor2 from "../img/4dev/01d9b744-c80a-427b-ae0e-d543b235ceed.png";
+import sponsor3 from "../img/4dev/c3bfea36-baf3-4d44-a099-37db373aa12c.png";
+import sponsor4 from "../img/4dev/e52cfac1-b87a-4f3f-beee-e06b2fd3ce4c.png";
+---
+
+<p-slide>
+  <div>
+    <Image src={sponsor1} alt="sponsor 1" class="alter-image-size" />
+    <Image src={sponsor2} alt="sponsor 2" class="alter-image-size" />
+    <Image src={sponsor3} alt="sponsor 3" class="alter-image-size" />
+    <Image src={sponsor4} alt="sponsor 4" class="alter-image-size" />
+    <div></div>
+    <style lang="scss">
+      div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 4rem;
+        img {
+          --image-start-size: 3em;
+        }
+      }
+    </style>
+  </div></p-slide
+>

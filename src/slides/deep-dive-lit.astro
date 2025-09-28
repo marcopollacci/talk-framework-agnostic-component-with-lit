@@ -1,0 +1,374 @@
+---
+import { Image } from "astro:assets";
+import deeperMeme from "../img/deeper-meme.jpeg";
+import lifecycle from "../img/lifecycle.png";
+import PNotes from "../components/PNotes.astro";
+import badgeDomSec from "../img/badge-dom-sec.png";
+import badgeDomTree from "../img/badge-dom-tre.png";
+---
+
+<p-slide class="center">
+  <Image src={deeperMeme} alt="deeper meme" class="alter-image-size" />
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Reactive Properties</span> ⚡
+  </h4>
+</p-slide>
+<p-slide>
+  <h4><span class="text-cover">@property()</span></h4>
+  <p p-fragment class="mid-dimension">
+    This decorator allows the component to provide a configurable API, which can
+    be set or updated by the component's users.
+  </p>
+</p-slide>
+<p-slide>
+  <h4 style="margin-block-end: 0.5em">
+    <span class="text-cover">@property()</span>
+  </h4>
+  <p class="mid-dimension" style="margin-block-end: 2em">
+    Properties can be fine-tuned with options
+  </p>
+  <ul class="mid-dimension">
+    <li p-fragment>
+      <code>type</code>: conversion (String, Number, Boolean, etc.)
+    </li>
+    <li p-fragment><code>reflect</code>: sync value to attribute</li>
+    <li p-fragment>
+      <code>attribute</code>: custom attribute name (or <code>false</code>)
+    </li>
+    <li p-fragment>
+      <code>converter</code>: custom logic for attribute ↔ property
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Internal State</span> 🔥
+  </h4>
+</p-slide>
+<p-slide>
+  <h4><span class="text-cover">@state()</span></h4>
+  <p p-fragment class="mid-dimension">
+    The decorator creates a <b>private reactive field</b> that exists only inside
+    the component, and yet every time its value changes, Lit will still trigger a
+    re-render.
+  </p>
+  <PNotes>
+    <p>
+      <b>@state</b>: perfect for internal state management, like UI toggles,
+      counters, or temporary values. It should not be accessible from outside,
+      keeping encapsulation intact.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  export class MyBadge extends LitElement {
+    @property({ type: String }) appearance = "";
+    static styles = css`
+      :host {
+        //other styles with default values and background...
+      }
+      :host([appearance="secondary"]) {
+        background-color: #6c757d;
+      }
+    `;
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }</code>
+</pre>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 1.2em;position: absolute;inset-block-end: 9.1em;width: 11em;inset-inline-start: 0.9em; z-index: 1000"
+    class="circle-sketch-highlight"></span>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 2.2em;position: absolute;inset-block-end: 6.5em;width: 11em;inset-inline-start: 0.9em; z-index: 1000"
+    class="circle-sketch-highlight"></span>
+</p-slide>
+<p-slide>
+  <div data-wc-live>
+    <div>
+      <code is:raw style="font-size: .36em" class="language-html small-line">
+        &lt;my-badge appearance="secondary">Badge&lt;/my-badge>
+      </code>
+      <my-badge appearance="secondary" p-fragment>Badge</my-badge>
+    </div>
+    <Image
+      p-fragment
+      style="--image-start-size: 4em"
+      src={badgeDomSec}
+      alt="badge dom"
+      class="alter-image-size"
+    />
+  </div>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Scoped Styles / Shadow DOM</span> 🥷🏿
+  </h4>
+</p-slide>
+<p-slide>
+  <ul class="mid-dimension">
+    <li>
+      📌 <b>Shadow DOM</b>: provides style and markup encapsulation. No more CSS
+      leaks or conflicts.
+    </li>
+    <li p-fragment>
+      📌 <b>Scoped Styles</b>: styles defined inside the component stay inside
+      and external CSS can't leak in and unexpectedly change how your component
+      looks
+    </li>
+  </ul>
+  <PNotes>
+    <p>
+      <b>@state</b>: perfect for internal state management, like UI toggles,
+      counters, or temporary values. It should not be accessible from outside,
+      keeping encapsulation intact.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-badge.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  export class MyBadge extends LitElement {
+    @property({ type: String }) appearance = "";
+    static styles = css`
+        //other styles with default values and background...
+        slot {
+            color: #fff;
+        }
+    `;
+    render() {
+      return html`&lt;slot>&lt;/slot> `;
+    }
+  }</code>
+</pre>
+  <span
+    p-fragment
+    style="--circle-sketch-height: 2.3em;position: absolute;inset-block-end: 6.8em;width: 7em;inset-inline-start: 0.9em;z-index: 1000"
+    class="circle-sketch-highlight"></span>
+</p-slide>
+<p-slide>
+  <div data-wc-live>
+    <div>
+      <code is:raw style="font-size: .38em" class="language-html small-line">
+        &lt;my-badge style="color: #000">Badge&lt;/my-badge>
+      </code>
+      <my-badge style="color: #000" p-fragment>Badge</my-badge>
+    </div>
+    <Image
+      p-fragment
+      style="--image-start-size: 4em"
+      src={badgeDomTree}
+      alt="badge dom"
+      class="alter-image-size"
+    />
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h3 class="text-cover">Component Lifecycle</h3>
+  <Image
+    src={lifecycle}
+    alt="lifecycle"
+    class="alter-image-size"
+    style="--image-start-size: 4em"
+  />
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover"
+      >Lit components extend <code>HTMLElement</code> and follow its lifecycle.</span
+    > 😎
+  </h4>
+</p-slide>
+<p-slide>
+  <ul class="mid-dimension">
+    <li>
+      📌 <code>connectedCallback</code> is called when the element is attached to
+      the DOM.
+    </li>
+    <li p-fragment>
+      📌
+      <code>disconnectedCallback</code> is called when the element is detached from
+      the DOM.
+    </li>
+    <li p-fragment>
+      📌 <code>attributeChangedCallback</code> is called when an attribute is changed.
+    </li>
+  </ul>
+  <PNotes>
+    <p>
+      <b>overview</b>: Lit builds on top of the native Custom Elements
+      lifecycle. When a component is attached or detached, hooks like <code
+        >connectedCallback</code
+      > and <code>disconnectedCallback</code> are triggered. This is standard Web
+      Components API. Lit then enriches this with its own rendering lifecycle.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h4>
+    <span class="text-cover">Lit-Specific Hooks.</span> 🔄
+  </h4>
+</p-slide>
+<p-slide>
+  <ul class="mid-dimension">
+    <li>
+      📌 <code>willUpdate(changed)</code> is called before each update, with the
+      changed properties
+    </li>
+    <li p-fragment>
+      📌 <code>updated(changed)</code> is called after each update, with the changed
+      properties
+    </li>
+    <li p-fragment>
+      📌 <code>render()</code> the main method that outputs HTML templates.
+    </li>
+    <li p-fragment>
+      📌 <code>firstUpdated(changed)</code> is called after the first reder.
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h2>
+    <span class="text-cover">Event Handling</span> 📢
+  </h2>
+</p-slide>
+<p-slide autoplay>
+  <p style="margin-block-end: 1em;">Handling events in Lit is easy. ✨</p>
+  <p p-fragment>
+    You bind events directly in the template with the <code>@</code> symbol
+  </p>
+</p-slide>
+<p-slide>
+  <h5 style="margin-block: 0.2em 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-button.ts">
+ <code is:raw style="font-size: .6em" class="language-js small-line"> //...
+  export class MyButton extends LitElement {</code>
+<p-fragment index="1"><code is:raw style="font-size: .6em" class="language-js small-line">
+    #handleClick() {
+      console.log("Button clicked!");
+    }</code></p-fragment>
+<p-fragment><code is:raw style="font-size: .6em" class="language-js small-line">
+    render() {
+      return html`
+        &lt;button @click=${this.#handleClick}>
+          Click me!
+        &lt;/button>
+      `;
+    }
+  }</code></p-fragment>
+</pre>
+  <PNotes>
+    <p>
+      highlight how Lit event system embraces the DOM standard. No need for
+      complex setup or custom wrappers — just use
+      <code>@event</code> syntax and bind it to a method. This works everywhere,
+      even if you drop your component inside Angular, React, or plain HTML.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h2>
+    <span class="text-cover">Directives</span> 🛣️
+  </h2>
+</p-slide>
+<p-slide class="center">
+  <p>
+    Directives are <span class="text-cover">special functions</span> in Lit that
+    can customize how template parts are rendered.
+  </p>
+</p-slide>
+<p-slide class="center" autoplay>
+  <p class="mid-dimension">
+    They are a powerful tool for <span class="text-cover"
+      >conditional rendering, looping, async data fetching, and creating
+      reusable template logic</span
+    >
+  </p>
+  <p p-fragment>✧｡٩(ˊᗜˋ )و✧*｡</p>
+</p-slide>
+<p-slide>
+  <h4 style="margin-block-end: 1em" class="cover-internal-sub-section-all">
+    Why directives?
+  </h4>
+  <ul class="mid-dimension" style="font-size: 0.6em;">
+    <li>
+      📌 <span class="cover-internal-sub-section-all">Reusability</span>:
+      Package complex template logic into a reusable function.
+    </li>
+    <li p-fragment>
+      📌 <span class="cover-internal-sub-section-all">Performance</span>: Many
+      built-in directives are optimized to minimize DOM updates.
+    </li>
+    <li p-fragment>
+      📌 <span class="cover-internal-sub-section-all">Expressiveness</span>:
+      Make your templates more declarative and easier to read.
+    </li>
+    <li p-fragment>
+      📌 <span class="cover-internal-sub-section-all">Dynamic Behavior</span>:
+      Create templates that react dynamically to state changes.
+    </li>
+  </ul>
+</p-slide>
+<p-slide autoplay timing-fragment="1000">
+  <h4 style="margin-block-end: 1em" class="cover-internal-sub-section-all">
+    Some Built-in directives
+  </h4>
+  <ul class="mid-dimension" style="font-size: 0.6em;">
+    <li p-fragment>📌 <code>repeat</code></li>
+    <li p-fragment>📌 <code>when</code></li>
+    <li p-fragment>📌 <code>map</code></li>
+  </ul>
+  <PNotes>
+    <p>
+      <code>repeat</code> is particularly useful when dealing with arrays, because
+      it doesn't just render items, it also optimizes updates by tracking keys. This
+      reduces re-renders and makes components more efficient.
+    </p>
+    <p>
+      <code>map</code> is a more lightweight helper when you just need to transform
+      a collection into DOM elements without the extra features of <code
+        >repeat</code
+      >.
+    </p>
+  </PNotes>
+</p-slide>
+<p-slide>
+  <h6 style="margin-block: 0.4em 0.15em" class="center">Let&#39;s Code 👨‍💻</h6>
+  <pre
+    class="small-line small-text"
+    data-label-file="my-list.ts">
+ <p-fragment><code is:raw style="font-size: .6em" class="language-js small-line"> //...
+   import { repeat } from 'lit/directives/repeat.js';</code></p-fragment>
+  <code is:raw style="font-size: .6em" class="language-js small-line">export class MyList extends LitElement {
+    items = [{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }];</code>
+   <p-fragment><code is:raw style="font-size: .6em" class="language-js small-line">render() {
+        return html`
+          &lt;ul>
+            ${repeat(
+              this.items,
+              (item) => item.id //<-- Key function for efficient updates
+              (item) => html`&lt;li>${item.name}&lt;/li>`
+            )}
+          &lt;/ul>
+        `;
+      }</code></p-fragment>
+  <code is:raw style="font-size: .6em" class="language-js small-line">}</code></pre>
+</p-slide>
+
+<PNotes>
+  <p>Using repeat is more efficient for list changes than items.map(...)</p>
+</PNotes>

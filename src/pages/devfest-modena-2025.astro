@@ -8,6 +8,9 @@ import qrCodeLink from '../img/qrcode_talk_devfest-modena.png'
 import qrCodeRating from '../img/qrcode_rating_devfest-modena.png'
 import Intro from '../slides/intro.astro';
 import DesignSystem from '../slides/design-system.astro';
+import ProblemWithFramework from '../slides/problem-with-framework.astro';
+import Webcomponent from '../slides/webcomponent.astro';
+import MeetLit from '../slides/meet-lit.astro';
 const favIcon = favicon.src;
 const canRender = import.meta.env.DEV || new Date("2025-10-04") < new Date(); //! TODO: check date!
 const metaData = {
@@ -21,6 +24,9 @@ const metaData = {
     <Cover />
     <Intro />
     <DesignSystem />
+    <ProblemWithFramework />
+    <Webcomponent />
+    <MeetLit />
     <Thanks qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025" />
   )}
 </Layout>
