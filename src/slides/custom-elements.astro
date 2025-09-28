@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import almostMeme from "../img/almost-meme.jpg";
+import finallydoneMeme from "../img/finallydone-meme.gif";
 import PNotes from "../components/PNotes.astro";
 import destroyallMeme from "../img/destroyall-meme.jpg";
 ---
@@ -96,5 +97,46 @@ import destroyallMeme from "../img/destroyall-meme.jpg";
     alt="destroy all meme"
     class="alter-image-size"
     style="--image-start-size: 5em; margin-block-start: 1em;"
+  />
+</p-slide>
+<p-slide class="center text-cover" autoplay>
+  <h4 style="margin-block-end: 0.5em;">custom-elements.json + VS Code ♡</h4>
+  <h5
+    p-fragment
+    class="cover-internal-sub-section-all"
+    style="margin-block-start: 1em;"
+  >
+    How do we make it work?
+  </h5>
+</p-slide>
+<p-slide class="center">
+  <h5><code>custom-element-vs-code-integration</code></h5>
+</p-slide>
+<p-slide>
+  <pre
+    class="small-line small-text"
+    data-label-file="bash.sh"><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //install library
+    npm install --save-dev custom-element-vs-code-integration</code>
+    <p-fragment><code is:raw style="font-size: .6em" class="language-js small-line">
+    //create script custom-vscode.js
+    import { generateVsCodeCustomElementData } from "custom-element-vs-code-integration";
+    import manifest from "./path/to/custom-elements.json";  
+    const options = {...};
+    generateVsCodeCustomElementData(manifest, options);</code></p-fragment>
+    <p-fragment><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //modify script to angular.json
+    "analyze": "cem analyze --litelement && node custom-vscode.js",</code></p-fragment>
+    <p-fragment><code is:raw style="font-size: .6em" class="language-bash small-line">
+    //then, run the script analyze agaiin
+    npm run analyze
+    </code></p-fragment>
+</pre></p-slide
+>
+<p-slide>
+  <Image
+    src={finallydoneMeme}
+    alt="finally done meme"
+    class="alter-image-size"
   />
 </p-slide>
