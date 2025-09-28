@@ -45,6 +45,22 @@ const { qrLink, urlLink, qrLinkRating } = Astro.props;
     )
   }
 </p-slide>
+<p-slide>
+  <h5 style="margin-block-end: 1em" class="center">
+    <span class="main-gradient">Questions?</span> ✨
+  </h5>
+  <pre
+    class="small-line small-text"
+    data-label-file="questions.ts">
+    <code is:raw class="language-js">
+    @customElement("q-and-a")
+    class QandA extends LitElement {
+      render() {
+        return html`&lt;p>Waiting for your questions... 🙋‍♀️&lt;/p>`;
+      }
+    }</code>
+  </pre>
+</p-slide>
 <p-slide class="two-columns">
   <p-note class="text-cover my-data my-presentation">
     <h5 class="text-cover">Thank you again!</h5>
