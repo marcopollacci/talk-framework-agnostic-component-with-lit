@@ -239,24 +239,24 @@ import badgeDomTree from "../img/badge-dom-tre.png";
 </p-slide>
 <p-slide>
   <h4>
-    <span class="text-cover">Lit-Specific Hooks.</span> 🔄
+    <span class="text-cover">Lit-Specific Lifecycle Hooks.</span> 🔄
   </h4>
 </p-slide>
 <p-slide>
   <ul class="mid-dimension">
     <li>
-      📌 <code>willUpdate(changed)</code> is called before each update, with the
-      changed properties
+      📌 <code>willUpdate(changedProperties)</code> is called before each update,
+      with the changed properties
     </li>
     <li p-fragment>
-      📌 <code>updated(changed)</code> is called after each update, with the changed
-      properties
+      📌 <code>updated(changedProperties)</code> is called after each update, with
+      the changed properties
     </li>
     <li p-fragment>
-      📌 <code>render()</code> the main method that outputs HTML templates.
+      📌 <code>render()</code> defines the component's template and returns HTML.
     </li>
     <li p-fragment>
-      📌 <code>firstUpdated(changed)</code> is called after the first reder.
+      📌 <code>firstUpdated(changedProperties)</code> is called after the first render.
     </li>
   </ul>
 </p-slide>
@@ -265,12 +265,16 @@ import badgeDomTree from "../img/badge-dom-tre.png";
     <span class="text-cover">Event Handling</span> 📢
   </h2>
 </p-slide>
+
 <p-slide autoplay>
-  <p style="margin-block-end: 1em;">Handling events in Lit is easy. ✨</p>
+  <p style="margin-block-end: 1em;">
+    Handling events in Lit is straightforward. ✨
+  </p>
   <p p-fragment>
-    You bind events directly in the template with the <code>@</code> symbol
+    Bind events directly in the template using the custom <code>@</code> syntax.
   </p>
 </p-slide>
+
 <p-slide>
   <h5 style="margin-block: 0.2em 0.5em" class="center">Let&#39;s Code 👨‍💻</h5>
   <pre

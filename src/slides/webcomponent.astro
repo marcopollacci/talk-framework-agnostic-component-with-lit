@@ -44,30 +44,33 @@ import PNotes from "../components/PNotes.astro";
   </h4>
   <ul class="mid-dimension">
     <li p-fragment>
-      📌 <strong>Custom Elements</strong> → define new HTML tags <code
-        p-fragment
-        is:raw>&lt;my-component></code
-      >
+      📌 <strong>Custom Elements</strong> → define new HTML tag
+      <code p-fragment is:raw>&lt;my-component></code>
     </li>
     <li p-fragment>
-      📌 <strong>Shadow DOM</strong> → encapsulation of styles & markup
+      📌 <strong>Shadow DOM</strong> → encapsulate styles and markup
     </li>
     <li p-fragment>
-      📌 <strong>HTML Templates</strong> → structure reusable chunks of DOM
+      📌 <strong>HTML Templates</strong> → declare reusable DOM fragments
     </li>
   </ul>
   <PNotes>
     <p>
-      <b>custom elements</b>: Let us define new tags like <code
+      <b>Custom Elements</b>: Allow developers to create new HTML tags, like <code
         >&lt;my-button&gt;</code
-      > that behave just like native HTML.
+      >, with custom behavior that works just like native elements.
     </p>
     <p>
-      <b>shadow dom</b>: Provides style and markup encapsulation — so no more
-      CSS leaks or conflicts.
+      <b>Shadow DOM</b>: Provides true encapsulation of markup and styles —
+      preventing CSS leaks and avoiding conflicts with the global scope.
+    </p>
+    <p>
+      <b>HTML Templates</b>: Define chunks of inert DOM that can be cloned and
+      instantiated at runtime, perfect for building reusable structures.
     </p>
   </PNotes>
 </p-slide>
+
 <p-slide class="center">
   <h2 style="margin-block-end: 0.3em;" class="text-cover">
     You already use them!
