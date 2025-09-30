@@ -141,6 +141,33 @@ import PNotes from "../components/PNotes.astro";
 </code>
 </pre>
   </div>
+  <script>
+    const stateElement = document.querySelector("p-slide[data-details]")!;
+    let interval: null | NodeJS.Timeout = null;
+    const observer = new MutationObserver((mutations) => {
+      const [element] = mutations;
+
+      const el = element.target as Element;
+      const isVisibile = el.getAttribute("aria-hidden") === "false";
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+      if (isVisibile && !interval) {
+        interval = setInterval(() => {
+          const details = document.querySelector("details");
+          if (details) {
+            details.open = !details.open;
+          }
+        }, 1500);
+      }
+    });
+
+    observer.observe(stateElement, {
+      attributes: true,
+      attributeFilter: ["aria-hidden"],
+    });
+  </script>
 </p-slide>
 <p-slide autoplay timing-fragment="1000">
   <h4><span class="text-cover">And much more!</span> ᕙ( •̀ ᗜ •́ )ᕗ</h4>
@@ -177,30 +204,3 @@ import PNotes from "../components/PNotes.astro";
     grid-template-columns: repeat(2, 1fr);
   }
 </style>
-<script>
-  const stateElement = document.querySelector("p-slide[data-details]")!;
-  let interval: null | NodeJS.Timeout = null;
-  const observer = new MutationObserver((mutations) => {
-    const [element] = mutations;
-
-    const el = element.target as Element;
-    const isVisibile = el.getAttribute("aria-hidden") === "false";
-    if (interval) {
-      clearInterval(interval);
-      interval = null;
-    }
-    if (isVisibile && !interval) {
-      interval = setInterval(() => {
-        const details = document.querySelector("details");
-        if (details) {
-          details.open = !details.open;
-        }
-      }, 1500);
-    }
-  });
-
-  observer.observe(stateElement, {
-    attributes: true,
-    attributeFilter: ["aria-hidden"],
-  });
-</script>

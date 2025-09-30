@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import problemMeme from "../img/problem_meme.gif";
 import PNotes from "../components/PNotes.astro";
-import consequence from "../img/there-will-be.jpg";
 ---
 
 <p-slide class="center cover-internal">
@@ -37,28 +36,6 @@ import consequence from "../img/there-will-be.jpg";
   </ul>
   <PNotes>
     <p><b>VendorLockIn: often only with same framework version</b></p>
-  </PNotes>
-</p-slide>
-<p-slide autoplay class="center">
-  <h3><span class="text-cover">Consequences of framework lock-in</span></h3>
-  <Image
-    p-fragment
-    style="--image-start-size: 6em"
-    src={consequence}
-    alt="consequence meme"
-    class="alter-image-size"
-  />
-</p-slide>
-<p-slide>
-  <ul class="mid-dimension">
-    <li>📌 Slow updates and feature adoption 🐢</li>
-    <li p-fragment>📌 Growing technical debt over time 📉</li>
-    <li p-fragment>📌 Higher long-term maintenance costs 💸</li>
-    <li p-fragment>📌 Blocked innovation across teams 🚧</li>
-    <li p-fragment>📌 Painful framework migrations 🤯</li>
-    <li p-fragment>📌 Business risk: DS lifespan = framework lifespan ⚖️</li>
-  </ul>
-  <PNotes>
     <p>
       <b>maintenance</b>: Developers spend more time fixing issues and adapting
       to breaking changes, instead of building new features. This isn't just
