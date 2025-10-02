@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import rolleyeMeme from "../img/rolleye-meme.gif";
+import happyMeme from "../img/happy-meme.gif";
 import boomMeme from "../img/boom-meme.gif";
 import PNotes from "../components/PNotes.astro";
+import flowerVideo from "../video/flower.webm";
 ---
 
 <p-slide class="center">
@@ -14,7 +15,7 @@ import PNotes from "../components/PNotes.astro";
 </p-slide>
 <p-slide class="center">
   <Image
-    src={rolleyeMeme}
+    src={happyMeme}
     alt="rolleye meme"
     class="alter-image-size"
     style="--image-start-size: 8em"
@@ -103,7 +104,7 @@ import PNotes from "../components/PNotes.astro";
   </h4>
   <div data-video-code>
     <video controls>
-      <source src="/video/flower.webm" type="video/webm" />
+      <source src={flowerVideo} type="video/webm" />
     </video>
     <pre
       class="small-line"
