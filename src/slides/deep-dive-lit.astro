@@ -5,6 +5,9 @@ import lifecycle from "../img/lifecycle.png";
 import PNotes from "../components/PNotes.astro";
 import badgeDomSec from "../img/badge-dom-sec.png";
 import badgeDomTree from "../img/badge-dom-tre.png";
+import { talkAlreadyDone } from '../utilities/oldTalk';
+const currentPath = Astro.url.pathname;
+console.log("🚀 ~ currentPath:", currentPath);
 ---
 
 <p-slide class="center">
@@ -301,6 +304,41 @@ import badgeDomTree from "../img/badge-dom-tre.png";
     </p>
   </PNotes>
 </p-slide>
+{
+  !talkAlreadyDone.includes(currentPath) && (
+    <p-slide class="center" autoplay>
+      <h4>
+        🔔 <span class="text-cover">Event handling in Shadow DOM</span> 🔔
+      </h4>
+
+      <p p-fragment>
+        <b>Encapsulation ≠ Isolation</b>: some events can bubble outside the
+        shadow boundary.
+      </p>
+    </p-slide>
+
+<p-slide>
+  <ul>
+    <li style="margin-block-end: 5rem;">
+      ✅ <b>Bubble through</b>: <code>click</code>, <code>input</code>, <code
+        >change</code
+      >
+      can be listened outside the shadow root.
+    </li>
+    <li p-fragment>
+      ❌ <b>Stay inside</b>: <code>mouseenter</code>, <code>mouseleave</code>,
+      <code>focus</code>, <code>blur</code> do not escape the shadow root.
+    </li>
+    <PNotes>
+      <p>
+        <b>Why it matters</b>: parent apps can still react to interactions, but
+        some UI logic must live inside the component.
+      </p>
+    </PNotes>
+  </ul>
+</p-slide>
+  )
+}
 <p-slide>
   <h2>
     <span class="text-cover">Directives</span> 🛣️
