@@ -109,49 +109,50 @@ import badgeDomTree from "../img/badge-dom-tre.png";
     />
   </div>
 </p-slide>
-<p-slide>
+<p-slide class="center">
   <h4>
-    <span class="text-cover">Scoped Styles / Shadow DOM</span> 🥷🏿
+    🥷🏿 <span class="text-cover"> Shadow DOM</span> 🤝 <span class="text-cover">
+      Scoped Styles</span
+    >
   </h4>
 </p-slide>
 <p-slide>
   <ul class="mid-dimension">
     <li>
-      📌 <b>Shadow DOM</b>: provides style and markup encapsulation. No more CSS
+      📌 <b>Shadow DOM</b>: provides markup and style encapsulation. No more CSS
       leaks or conflicts.
     </li>
     <li p-fragment>
-      📌 <b>Scoped Styles</b>: styles defined inside the component stay inside
-      and external CSS can't leak in and unexpectedly change how your component
-      looks
+      📌 <b>Scoped Styles</b>: styles defined inside a component’s shadow DOM
+      stay isolated. External CSS cannot leak in or unexpectedly change its
+      appearance.
     </li>
   </ul>
   <PNotes>
     <p style="font-size: 0.75em;">
-      <b>Shadow DOM</b>: browser feature allowing components to encapsulate
+      <b>Shadow DOM</b>: a browser feature that allows components to encapsulate
       their structure and styles. This prevents external CSS from breaking the
       component and makes it portable across different apps.
     </p>
     <p style="font-size: 0.75em;">
-      <b>Shadow DOM basics</b>: It creates a hidden DOM subtree inside your
+      <b>Shadow DOM basics</b>: it creates a hidden DOM subtree inside your
       element. This makes components self-contained and prevents conflicts with
       the rest of the app.
     </p>
     <p style="font-size: 0.75em;">
-      <b>Encapsulation</b>: Styles are scoped to the shadow tree. A global CSS
-      rule like <code is:raw>p { color: blue }</code> will not affect the paragraph
+      <b>Encapsulation</b>: styles are scoped to the shadow tree. A global CSS
+      rule like <code is:raw>p { color: blue }</code> will not affect a paragraph
       inside this component.
     </p>
     <p style="font-size: 0.75em;">
-      <b>Open vs closed mode</b>: With <code>open</code>, you can access
-      <code>shadowRoot</code> from JavaScript. With <code>closed</code>, it's
-      hidden, useful for stricter encapsulation.
+      <b>Open vs. closed mode</b>: with <code>open</code>, you can access the
+      <code>shadowRoot</code> from JavaScript. With <code>closed</code>, it’s
+      hidden—useful for stricter encapsulation.
     </p>
     <p style="font-size: 0.75em;">
-      <b>Scoped Styles</b>: Emphasize that styles written inside the component
-      are automatically scoped, so you don't have to worry about class naming
-      conventions like BEM or about unexpected overrides from a global
-      stylesheet.
+      <b>Scoped Styles</b>: styles written inside a component are automatically
+      scoped, so you don’t need class naming conventions like BEM or worry about
+      unexpected overrides from global stylesheets.
     </p>
   </PNotes>
 </p-slide>
