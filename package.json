@@ -13,13 +13,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "astro": "^5.15.4",
-    "p-slides": "^1.4.2"
+    "astro": "^5.15.9",
+    "p-slides": "^1.5.1"
   },
   "devDependencies": {
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
     "husky": "^9.1.7",
-    "sass": "^1.93.3",
+    "sass": "^1.94.0",
     "sharp": "^0.34.5",
     "vite-plugin-static-copy": "^3.1.4"
   }
