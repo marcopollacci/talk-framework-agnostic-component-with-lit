@@ -26,6 +26,13 @@ function handleHash() {
 addEventListener("hashchange", handleHash);
 handleHash();
 
+if (navigator.userAgent.toLowerCase().includes("electron")) {
+  const params = new URLSearchParams(location.hash.slice(1));
+  if (!params.get("mode")) {
+    document.body.setAttribute("electron", "electron");
+  }
+}
+
 function getSlide(slideRef) {
   if (/^\d+$/.test(`${slideRef}`.trim())) {
     return deck.querySelectorAll("p-slide")[+slideRef] || null;

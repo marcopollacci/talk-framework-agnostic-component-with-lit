@@ -15,6 +15,13 @@
   }
 }
 
+[electron] {
+  .presentation-toolbar,
+  .presentation-nav {
+    display: none;
+  }
+}
+
 body {
   margin: 0;
 }
