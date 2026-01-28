@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
 // https://astro.build/config
@@ -7,40 +7,46 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "Graphik Semibold",
         cssVariable: "--talk-marco-graphik-semibold",
-        variants: [
-          {
-            src: ["./src/fonts/GraphikSemibold.otf"],
-            weight: 700,
-            style: "normal",
-          },
-        ],
+        options: {
+          variants: [
+            {
+              src: ["./src/fonts/GraphikSemibold.otf"],
+              weight: 700,
+              style: "normal",
+            },
+          ],
+        },
       },
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "Graphik Regular",
         cssVariable: "--talk-marco-graphik-regular",
-        variants: [
-          {
-            weight: 400,
-            style: "normal",
-            src: ["./src/fonts/GraphikRegular.otf"],
-          },
-        ],
+        options: {
+          variants: [
+            {
+              src: ["./src/fonts/GraphikRegular.otf"],
+              weight: 400,
+              style: "normal",
+            },
+          ],
+        },
       },
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "Graphik Medium",
         cssVariable: "--talk-marco-graphik-medium",
-        variants: [
-          {
-            src: ["./src/fonts/GraphikMedium.otf"],
-            weight: 500,
-            style: "normal",
-          },
-        ],
+        options: {
+          variants: [
+            {
+              src: ["./src/fonts/GraphikMedium.otf"],
+              weight: 500,
+              style: "normal",
+            },
+          ],
+        },
       },
     ],
   },
