@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import me from "../img/me.png";
-import qrLink from "../img/qr_link.svg";
 import fourtyFactory from "../img/40factory.svg";
 import gka from "../img/gitkraken_ambassador.webp";
+import me from "../img/me.png";
+import qrLink from "../img/qr_link.svg";
+const { showGitKraken = true, alternativeMe } = Astro.props;
 ---
 
 <p-slide class="two-columns" autoplay>
@@ -13,7 +14,7 @@ import gka from "../img/gitkraken_ambassador.webp";
   >
     <h5>Hello Folks!</h5>
     <Image
-      src={me}
+      src={alternativeMe || me}
       class="my-face"
       alt="me"
       style="--image-start-size: 6em"
@@ -30,14 +31,18 @@ import gka from "../img/gitkraken_ambassador.webp";
         style="--image-start-size: .6em"
       />
     </div>
-    <p-fragment>
-      <Image
-        src={gka}
-        alt="gka"
-        style="--image-start-size: 2.5em;position: absolute;inset-inline-end: 0;inset-block-start: 1em;"
-        class="alter-image-size"
-      />
-    </p-fragment>
+    {
+      showGitKraken && (
+        <p-fragment>
+          <Image
+            src={gka}
+            alt="gka"
+            style="--image-start-size: 2.5em;position: absolute;inset-inline-end: 0;inset-block-start: 1em;"
+            class="alter-image-size"
+          />
+        </p-fragment>
+      )
+    }
   </p-note>
   <Image
     style="--image-start-size: 10.5em"

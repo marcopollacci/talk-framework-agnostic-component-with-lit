@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "4dev",
     "devfest-modena",
+    "itdevcon",
     "project",
     "intro",
     "design-system"
@@ -31,5 +32,12 @@
   ],
   "css.customData": [
     "./node_modules/p-slides/p-slides.vscode.css-custom-data.json"
-  ]
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
 }

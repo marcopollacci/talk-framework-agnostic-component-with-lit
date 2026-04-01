@@ -14,6 +14,7 @@ Built on top of [P-Slides](https://github.com/MaxArt2501/p-slides)!
 
 - [03/10/2025 - Sharp4Dev 2025](https://talk-framework-agnostic-component-with-lit.pages.dev/4dev-2025/)
 - [04/10/2025 - DevFest Modena 2025](https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025/)
+- [08/05/2026 - ITDevCon 2026](https://talk-framework-agnostic-component-with-lit.pages.dev/itdevcon-2026/)
 
 ## Building
 

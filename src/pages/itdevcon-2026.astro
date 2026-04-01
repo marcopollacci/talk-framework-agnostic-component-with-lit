@@ -1,10 +1,11 @@
 ---
-import favicon from "../img/4dev-logo.png";
-import qrCodeRating from "../img/qrcode_rating_4dev.png";
-import qrCodeLink from "../img/qrcode_talk_4dev_roma.png";
+import favicon from "../img/favicon-itdevcon-32x32.png";
+import me2 from "../img/me2.png";
+import qrCodeRating from "../img/qrcode_rating_itdevcon.png";
+import qrCodeLink from "../img/qrcode_talk_itdevcon.png";
 import Layout from "../layouts/Layout.astro";
 import Conclusions from "../slides/conclusions.astro";
-import CoverFourDev from "../slides/cover-four-dev.astro";
+import CoverItDevcon from "../slides/cover-it-devcon.astro";
 import Cover from "../slides/cover.astro";
 import CustomElements from "../slides/custom-elements.astro";
 import DeepDiveLit from "../slides/deep-dive-lit.astro";
@@ -14,25 +15,22 @@ import IntegrationVanilla from "../slides/integration-vanilla.astro";
 import Intro from "../slides/intro.astro";
 import MeetLit from "../slides/meet-lit.astro";
 import ProblemWithFramework from "../slides/problem-with-framework.astro";
-import Sponsor4Dev from "../slides/sponsor-4dev.astro";
-import ThanksWithLayout from "../slides/thanks-with-layout.astro";
+import Thanks from "../slides/thanks.astro";
 import Webcomponent from "../slides/webcomponent.astro";
-
 const favIcon = favicon.src;
-const canRender = import.meta.env.DEV || new Date("2025-10-03") < new Date();
+const canRender = import.meta.env.DEV || new Date("2026-05-08") < new Date();
 const metaData = {
   title: "Framework-Agnostic Design Systems: Using Lit Web Components",
   description: "Talk di Marco Pollacci",
 };
 ---
 
-<Layout {canRender} {favIcon} {metaData} wrapper="4dev">
-  <CoverFourDev />
+<Layout {canRender} {favIcon} {metaData}>
+  <CoverItDevcon />
   {
     canRender && (
       <>
-        <Sponsor4Dev />
-        <Cover />
+        <Cover showGitKraken={false} alternativeMe={me2} />
         <Intro />
         <DesignSystem />
         <ProblemWithFramework />
@@ -43,10 +41,11 @@ const metaData = {
         <IntegrationAngular />
         <CustomElements />
         <Conclusions />
-        <ThanksWithLayout
+        <Thanks
+          alternativeMe={me2}
           qrLinkRating={qrCodeRating}
           qrLink={qrCodeLink}
-          urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/4dev-2025"
+          urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/itdevcon-2026"
         />
       </>
     )

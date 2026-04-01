@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import itdevconLogo from "../img/logo-itdevcon-blu-1000px-2.png";
+---
+
+<p-slide class="cover">
+  <h1>Framework-Agnostic Design Systems</h1>
+  <p-note class="center">
+    <h6 style="margin-block-end: 1.6em;">
+      From Delphi Components to Web Components with Lit
+    </h6>
+    <Image src={itdevconLogo} alt="IT DevCon logo" class="alter-image-size" />
+  </p-note>
+  <p-note class="center bottom-fist-page text-sub-section">
+    <span>Marco Pollacci</span>
+    <span>08/05/2026 - Roma</span>
+  </p-note>
+</p-slide>
+<style lang="scss">
+  p-slide {
+    img {
+      --image-start-size: 2.5em;
+      margin-block-start: 0.5em;
+      height: var(--image-start-size);
+    }
+  }
+</style>

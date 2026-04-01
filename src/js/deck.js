@@ -7,5 +7,8 @@ styleHeader.innerHTML = `header { display: flex;
   }
  }`;
 
-const headerSpeackerAside = document.querySelector("p-deck");
-headerSpeackerAside.shadowRoot.appendChild(styleHeader);
+window.onload = () => {
+  const headerSpeackerAside = document.querySelector("p-deck");
+  if (!headerSpeackerAside) return;
+  headerSpeackerAside.shadowRoot.appendChild(styleHeader);
+};

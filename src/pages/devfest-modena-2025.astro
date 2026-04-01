@@ -1,42 +1,52 @@
 ---
+import favicon from "../img/dfm-logo.svg";
+import qrCodeRating from "../img/qrcode_rating_devfest-modena.png";
+import qrCodeLink from "../img/qrcode_talk_devfest-modena.png";
 import Layout from "../layouts/Layout.astro";
+import Conclusions from "../slides/conclusions.astro";
 import CoverDevFestModena from "../slides/cover-devfest-modena.astro";
 import Cover from "../slides/cover.astro";
+import CustomElements from "../slides/custom-elements.astro";
+import DeepDiveLit from "../slides/deep-dive-lit.astro";
+import DesignSystem from "../slides/design-system.astro";
+import IntegrationAngular from "../slides/integration-angular.astro";
+import IntegrationVanilla from "../slides/integration-vanilla.astro";
+import Intro from "../slides/intro.astro";
+import MeetLit from "../slides/meet-lit.astro";
+import ProblemWithFramework from "../slides/problem-with-framework.astro";
 import Thanks from "../slides/thanks.astro";
-import favicon from '../img/dfm-logo.svg';
-import qrCodeLink from '../img/qrcode_talk_devfest-modena.png'
-import qrCodeRating from '../img/qrcode_rating_devfest-modena.png'
-import Intro from '../slides/intro.astro';
-import DesignSystem from '../slides/design-system.astro';
-import ProblemWithFramework from '../slides/problem-with-framework.astro';
-import Webcomponent from '../slides/webcomponent.astro';
-import MeetLit from '../slides/meet-lit.astro';
-import Conclusions from '../slides/conclusions.astro';
-import CustomElements from '../slides/custom-elements.astro';
-import DeepDiveLit from '../slides/deep-dive-lit.astro';
-import IntegrationAngular from '../slides/integration-angular.astro';
-import IntegrationVanilla from '../slides/integration-vanilla.astro';
+import Webcomponent from "../slides/webcomponent.astro";
 const favIcon = favicon.src;
-const canRender = import.meta.env.DEV || new Date("2025-10-04") < new Date(); //! TODO: check date!
+const canRender = import.meta.env.DEV || new Date("2025-10-04") < new Date();
 const metaData = {
-  title: 'Framework-Agnostic Design Systems: Using Lit Web Components in Angular',
-  description: 'Talk di Marco Pollacci',
+  title:
+    "Framework-Agnostic Design Systems: Using Lit Web Components in Angular",
+  description: "Talk di Marco Pollacci",
 };
 ---
-<Layout canRender={canRender} favIcon={favIcon} metaData={metaData}>
+
+<Layout {canRender} {favIcon} {metaData}>
   <CoverDevFestModena />
-  {canRender && (
-    <Cover />
-    <Intro />
-    <DesignSystem />
-    <ProblemWithFramework />
-    <Webcomponent />
-    <MeetLit />
-    <DeepDiveLit />
-    <IntegrationVanilla />
-    <IntegrationAngular />
-    <CustomElements />
-    <Conclusions />
-    <Thanks qrLinkRating={qrCodeRating} qrLink={qrCodeLink} urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025" />
-  )}
+  {
+    canRender && (
+      <>
+        <Cover />
+        <Intro />
+        <DesignSystem />
+        <ProblemWithFramework />
+        <Webcomponent />
+        <MeetLit />
+        <DeepDiveLit />
+        <IntegrationVanilla />
+        <IntegrationAngular />
+        <CustomElements />
+        <Conclusions />
+        <Thanks
+          qrLinkRating={qrCodeRating}
+          qrLink={qrCodeLink}
+          urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/devfest-modena-2025"
+        />
+      </>
+    )
+  }
 </Layout>

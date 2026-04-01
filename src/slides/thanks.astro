@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import me from "../img/me.png";
 import fourtyFactory from "../img/40factory.svg";
-const { qrLink, urlLink, qrLinkRating } = Astro.props;
+import me from "../img/me.png";
+const { qrLink, urlLink, qrLinkRating, alternativeMe } = Astro.props;
 ---
 
 <p-slide>
@@ -58,7 +58,7 @@ const { qrLink, urlLink, qrLinkRating } = Astro.props;
   <p-note class="text-cover my-data my-presentation">
     <h5 class="text-cover">Thank you again!</h5>
     <Image
-      src={me}
+      src={alternativeMe || me}
       class="my-face"
       alt="me"
       style="--image-start-size: 6em"
