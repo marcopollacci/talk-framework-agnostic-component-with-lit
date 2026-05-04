@@ -2,7 +2,7 @@
 const {
   title,
   description,
-  image = "/og-image.png",
+  image,
   canonical,
   type = "website",
   locale = "en_US",
@@ -13,7 +13,7 @@ const url = canonical
   ? new URL(canonical, site).toString()
   : new URL(Astro.url.pathname, site).toString();
 
-const imageUrl = new URL(image, site).toString();
+const imageUrl = new URL(`/img/${image}`, site).toString();
 ---
 
 <title>{title}</title>
