@@ -23,6 +23,8 @@ const canRender = import.meta.env.DEV || new Date("2026-05-08") < new Date();
 const metaData = {
   title: "Framework-Agnostic Design Systems: Using Lit Web Components",
   description: "Talk di Marco Pollacci",
+  image: "og-image.png",
+  site: "https://talk-framework-agnostic-component-with-lit.pages.dev/itdevcon-2026",
 };
 ---
 
@@ -50,7 +52,7 @@ const metaData = {
           alternativeMe={me2}
           qrLinkRating={qrCodeRating}
           qrLink={qrCodeLink}
-          urlLink="https://talk-framework-agnostic-component-with-lit.pages.dev/itdevcon-2026"
+          urlLink={metaData.site}
         >
           <p-slide class="center">
             <h2 style="margin-block-end: 0.3em">You can go on Demo Repo</h2>

@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import { Font } from "astro:assets";
 import comingSoon from "../img/coming-soon.png";
 import AdditionalLayout from "./AdditionalLayout.astro";
+import Seo from "../components/Seo.astro";
 const { canRender, favIcon, metaData, wrapper } = Astro.props;
 const bodyAttributes = canRender ? undefined : "coming-soon";
 ---
@@ -15,6 +16,7 @@ const bodyAttributes = canRender ? undefined : "coming-soon";
 <!doctype html>
 <html lang="en">
   <head>
+    <Seo {...metaData} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={favIcon} />
@@ -22,10 +24,7 @@ const bodyAttributes = canRender ? undefined : "coming-soon";
     <Font cssVariable="--talk-marco-graphik-regular" />
     <Font cssVariable="--talk-marco-graphik-medium" />
     <link href="/css/prism-one-light.css" rel="stylesheet" />
-    <meta name="description" content={metaData.description} />
 
-    <meta property="og:title" content={metaData.title} />
-    <meta name="generator" content={Astro.generator} />
     <title>{metaData.title}</title>
   </head>
   <body coming-soon={bodyAttributes}>

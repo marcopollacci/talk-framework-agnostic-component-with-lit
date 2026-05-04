@@ -48,6 +48,9 @@ export default defineConfig({
     },
   ],
   vite: {
+    server: {
+      allowedHosts: ["d620-95-236-1-44.ngrok-free.app"],
+    },
     build: {
       rollupOptions: {
         output: {
